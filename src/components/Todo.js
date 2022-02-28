@@ -2,12 +2,26 @@ import React from 'react';
 import {BsCheckSquareFill} from 'react-icons/bs';
 import {BsTrashFill} from 'react-icons/bs';
 
-const Todo = ({text}) => {
+const Todo = ({text, todo, todos, setTodos}) => {
+  const completeHandler = () => {
+    setTodos(todos.map(item => {
+      if (item.id === todo.id) {
+        return {
+          ...item, completed: !item.completed
+        }
+      }
+      return item;
+    }));
+  };
+
+  const deleteHandler = () => {
+    setTodos(todos.filter(t => t.id !== todo.id));
+  }
   return (
     <div className='todo'>
-        <li className="todo-item">{text}</li>
-        <button className="complete-btn"><BsCheckSquareFill/></button>
-        <button className="complete-btn"><BsTrashFill/></button>
+        <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>
+        <button onClick={completeHandler} className="complete-btn"><BsCheckSquareFill/></button>
+        <button onClick={deleteHandler} className="complete-btn"><BsTrashFill/></button>
     </div>
   )
 }
