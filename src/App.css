@@ -44,7 +44,7 @@ form button:hover {
 }
 
 .todo-list {
-  min-width: 40%;
+  min-width: 30%;
   list-style: none;
 }
 
@@ -133,6 +133,17 @@ select {
   pointer-events: none;
 }
 
+footer {
+  background-color: #c33764;
+  color: #fff;
+  font-size: 1rem;
+  margin: 12rem auto 1rem;
+  padding: 1rem;
+  width: 70%;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
 @media only screen and (max-width: 1024px) {
 }
 
@@ -187,5 +198,11 @@ select {
   }
   .todo-item {
     padding: 0rem 1rem;
+  }
+  footer {
+    font-size: 0.6rem;
+    margin: 7rem auto 1rem;
+    padding: 1rem;
+    width: 80%;
   }
 }

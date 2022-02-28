@@ -57,6 +57,9 @@ function App() {
       <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} status={status} setStatus={setStatus} />
       <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} 
       setFilteredTodos={setFilteredTodos} />
+      <footer>
+        <h3>Copyright &copy; 2022 <span>Sleeky</span></h3>
+      </footer>
     </div>
   );
 }
