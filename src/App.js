@@ -12,27 +12,22 @@ function App() {
 
   useEffect(() => {
     getLocalTodos();
-  }, []);
+  });
   //to call filter handler
-  useEffect(() => {
-    filterHandler();
-    saveLocalTodos();
-  }, [todos, status]);
-  
-  const filterHandler = () => {
+  useEffect(() => {const filterHandler = () => {
     //using switch case to filter the todos based on the filter type chosen
     switch(status) {
       case 'completed':
         setFilteredTodos(todos.filter(todo => todo.completed === true))
-        break;
+      break;
 
-        case 'uncompleted':
-          setFilteredTodos(todos.filter(todo => todo.completed === false))
-          break;
+      case 'uncompleted':
+        setFilteredTodos(todos.filter(todo => todo.completed === false))
+      break;
 
-        default:
-          setFilteredTodos(todos)
-          break;
+      default:
+        setFilteredTodos(todos)
+      break;
     }
   }
 
@@ -40,6 +35,11 @@ function App() {
   const saveLocalTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }
+    filterHandler();
+    saveLocalTodos();
+  }, [todos, status]);
+  
+  
   const getLocalTodos = () => {
     if (localStorage.getItem("todos") === null) {
       localStorage.setItem("todos", JSON.stringify(todos));
