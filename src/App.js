@@ -12,9 +12,14 @@ function App() {
 
   useEffect(() => {
     getLocalTodos();
-  });
+  }, []);
   //to call filter handler
-  useEffect(() => {const filterHandler = () => {
+  useEffect(() => {
+    filterHandler()
+    saveLocalTodos();
+  }, [todos, status]);
+  
+  const filterHandler = () => {
     //using switch case to filter the todos based on the filter type chosen
     switch(status) {
       case 'completed':
@@ -35,11 +40,6 @@ function App() {
   const saveLocalTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }
-    filterHandler();
-    saveLocalTodos();
-  }, [todos, status]);
-  
-  
   const getLocalTodos = () => {
     if (localStorage.getItem("todos") === null) {
       localStorage.setItem("todos", JSON.stringify(todos));
