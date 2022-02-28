@@ -8,7 +8,7 @@ const Form = ({inputText, setInputText, todos, setTodos, setStatus}) => {
     const addhandler = (e) => {
         e.preventDefault();
         setTodos([
-            ...todos, {text: inputText, completed: false, id: Math.floor(Math.random() * 100)},
+            ...todos, {text: inputText, completed: false, id: Math.floor(Math.random() * 1000)},
         ]);
         setInputText('');
     };
