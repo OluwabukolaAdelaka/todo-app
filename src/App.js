@@ -52,7 +52,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Sleeky's Todo List</h1>
+        <h1 className='title'>Sleeky's Todo List</h1>
       </header>
       <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} status={status} setStatus={setStatus} />
       <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} 
