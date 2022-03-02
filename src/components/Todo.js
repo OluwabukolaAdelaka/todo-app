@@ -1,6 +1,7 @@
 import React from 'react';
-import {BsCheckSquareFill} from 'react-icons/bs';
-import {BsTrashFill} from 'react-icons/bs';
+//import {BsCheckSquareFill} from 'react-icons/bs';
+//import {BsTrashFill} from 'react-icons/bs';
+
 
 const Todo = ({text, todo, todos, setTodos}) => {
   const completeHandler = () => {
@@ -20,8 +21,8 @@ const Todo = ({text, todo, todos, setTodos}) => {
   return (
     <div className='todo'>
         <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>
-        <button onClick={completeHandler} className="complete-btn"><BsCheckSquareFill/></button>
-        <button onClick={deleteHandler} className="complete-btn"><BsTrashFill/></button>
+        <button onClick={completeHandler} className="complete-btn">`<i class="fas fa-check"></i></button>
+        <button onClick={deleteHandler} className="complete-btn"><i class="fas fa-trash"></i></button>
     </div>
   )
 }

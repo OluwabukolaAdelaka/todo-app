@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import Form from './components/Form';
 import TodoList from './components/TodoList';
@@ -54,7 +55,7 @@ function App() {
       <header>
         <h1 className='title'>Sleeky's Todo List</h1>
       </header>
-      <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} status={status} setStatus={setStatus} />
+      <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} status={status} setStatus={setStatus}/>
       <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} 
       setFilteredTodos={setFilteredTodos} />
       <footer>
